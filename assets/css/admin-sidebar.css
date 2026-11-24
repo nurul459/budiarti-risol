@@ -1,0 +1,430 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+
+
+/* =========================================================
+   ADMIN SIDEBAR — BUDIARTI'S RISOLE
+   Typography dan warna diseragamkan
+========================================================= */
+
+:root {
+    --admin-brown: #542D1C;
+    --admin-brown-light: #704832;
+    --admin-hover: rgba(255, 255, 255, .07);
+    --admin-active: #5b2c18;
+    --admin-cream: #F8EFE5;
+    --admin-gold: #ffde96;
+    --admin-text: #f6e8dc;
+    --admin-muted: #ead9cc;
+    --admin-font: 'DM Sans', Arial, sans-serif;
+    --admin-heading: 'Playfair Display', Georgia, serif;
+}
+
+/* =========================================================
+   SIDEBAR UTAMA
+========================================================= */
+
+.sidebar {
+    display: flex !important;
+    flex-direction: column !important;
+
+    width: 253px !important;
+    min-width: 253px !important;
+    height: 100vh !important;
+
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+
+    padding: 22px 15px !important;
+
+    background: var(--admin-brown) !important;
+    color: #fff !important;
+
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+
+    z-index: 1000 !important;
+
+    box-sizing: border-box !important;
+    scrollbar-width: thin !important;
+    scrollbar-color: #98704e var(--admin-brown) !important;
+
+    font-family: var(--admin-font) !important;
+
+    transition: width .2s ease, min-width .2s ease !important;
+}
+
+
+/* Lebar sidebar dan area konten dibuat konsisten pada seluruh halaman admin. */
+.admin-wrapper .main-content,
+.main-content {
+    margin-left: 253px !important;
+    width: calc(100% - 253px) !important;
+}
+
+body.sidebar-collapsed .main-content {
+    margin-left: 72px !important;
+    width: calc(100% - 72px) !important;
+}
+
+/* =========================================================
+   LOGO SIDEBAR
+========================================================= */
+
+.sidebar-logo {
+    text-align: center !important;
+    padding: 0 0 27px !important;
+    margin: 0 !important;
+}
+
+.sidebar-logo .logo-icon {
+    width: 100% !important;
+    height: 36px !important;
+
+    margin: 0 0 4px !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    font-size: 30px !important;
+    line-height: 1 !important;
+}
+
+.sidebar-logo h2 {
+    margin: 0 !important;
+
+    font-family: var(--admin-heading) !important;
+    font-size: 26px !important;
+    font-weight: 600 !important;
+    font-style: normal !important;
+    line-height: 1.2 !important;
+
+    color: #fff !important;
+}
+
+/* Tipografi logo disamakan pada Dashboard, Pesanan, Produk, Keuangan, dan halaman admin lainnya. */
+.sidebar .sidebar-logo h2 {
+    font-family: var(--admin-heading) !important;
+    font-size: 26px !important;
+    font-weight: 600 !important;
+    font-style: normal !important;
+    line-height: 1.2 !important;
+}
+
+.sidebar .sidebar-logo p {
+    font-family: var(--admin-font) !important;
+    font-size: 10px !important;
+    font-weight: 500 !important;
+    font-style: normal !important;
+    line-height: 1.4 !important;
+    letter-spacing: 1px !important;
+    color: var(--admin-gold) !important;
+}
+
+.sidebar-logo p {
+    margin: 4px 0 0 !important;
+
+    font-family: var(--admin-font) !important;
+    font-size: 10px !important;
+    font-weight: 500 !important;
+    line-height: 1.4 !important;
+    letter-spacing: 1px !important;
+
+    color: var(--admin-gold) !important;
+}
+
+/* =========================================================
+   MENU SIDEBAR
+========================================================= */
+
+.sidebar-menu {
+    flex: 1 1 auto !important;
+    min-height: 0 !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 5px !important;
+
+    width: 100% !important;
+}
+
+.sidebar-main-link,
+.sidebar-group > summary {
+    width: 100% !important;
+    min-height: 43px !important;
+
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+
+    padding: 10px 13px !important;
+    margin: 0 !important;
+
+    border: none !important;
+    border-radius: 8px !important;
+
+    color: var(--admin-text) !important;
+    background: transparent !important;
+
+    text-decoration: none !important;
+
+    font-family: var(--admin-font) !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    line-height: 1.4 !important;
+
+    white-space: nowrap !important;
+    box-sizing: border-box !important;
+
+    cursor: pointer !important;
+    list-style: none !important;
+
+    transition: background .22s ease, color .22s ease, box-shadow .22s ease !important;
+}
+
+.sidebar-group > summary::-webkit-details-marker {
+    display: none !important;
+}
+
+.sidebar-main-link:hover,
+.sidebar-group > summary:hover {
+    background: var(--admin-hover) !important;
+    color: #fff !important;
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,.025), 0 2px 8px rgba(0,0,0,.10) !important;
+}
+
+.sidebar-main-link.active,
+.sidebar-group[open] > summary {
+    background: var(--admin-active) !important;
+    color: #fff !important;
+    box-shadow: inset 0 0 10px rgba(0,0,0,.22), 0 2px 8px rgba(0,0,0,.12) !important;
+}
+
+.sidebar-main-link.active {
+    font-weight: 600 !important;
+}
+
+.sidebar-group[open] > summary {
+    border-radius: 8px 8px 5px 5px !important;
+}
+
+/* =========================================================
+   IKON MENU
+========================================================= */
+
+.menu-icon {
+    flex: 0 0 20px !important;
+
+    width: 20px !important;
+    min-width: 20px !important;
+    height: 18px !important;
+
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    text-align: center !important;
+
+    font-size: 15px !important;
+    line-height: 1 !important;
+    font-weight: 400 !important;
+}
+
+/* =========================================================
+   LABEL MENU
+========================================================= */
+
+.menu-label {
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
+
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+
+    font-family: var(--admin-font) !important;
+    font-size: 14px !important;
+    font-weight: inherit !important;
+    line-height: 1.4 !important;
+}
+
+/* =========================================================
+   CHEVRON DROPDOWN
+========================================================= */
+
+.sidebar-group > summary .group-chevron {
+    margin-left: auto !important;
+
+    flex: 0 0 auto !important;
+
+    font-size: 13px !important;
+    opacity: .8 !important;
+
+    transform: rotate(0deg) !important;
+    transition: transform .15s ease !important;
+}
+
+.sidebar-group[open] > summary .group-chevron {
+    transform: rotate(180deg) !important;
+}
+
+/* =========================================================
+   SUBMENU
+========================================================= */
+
+.sidebar-submenu {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 2px !important;
+
+    margin: 2px 0 1px 13px !important;
+    padding: 2px 0 2px 9px !important;
+
+    border-left: 1px solid rgba(255,255,255,.18) !important;
+}
+
+.sidebar-sub-link {
+    width: 100% !important;
+    min-height: 33px !important;
+
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+
+    padding: 7px 9px !important;
+
+    border-radius: 6px !important;
+
+    color: var(--admin-muted) !important;
+    background: transparent !important;
+
+    text-decoration: none !important;
+
+    font-family: var(--admin-font) !important;
+    font-size: 12px !important;
+    font-weight: 400 !important;
+    line-height: 1.4 !important;
+
+    box-sizing: border-box !important;
+
+    transition: background .22s ease, color .22s ease, box-shadow .22s ease !important;
+}
+
+.sidebar-sub-link .menu-icon {
+    flex-basis: 17px !important;
+
+    width: 17px !important;
+    min-width: 17px !important;
+    height: 16px !important;
+
+    font-size: 12px !important;
+}
+
+.sidebar-sub-link:hover {
+    background: var(--admin-hover) !important;
+    color: #fff !important;
+    box-shadow: inset 0 0 14px rgba(255,255,255,.03) !important;
+}
+
+.sidebar-sub-link.active {
+    background: var(--admin-active) !important;
+    color: #fff !important;
+    box-shadow: inset 0 0 8px rgba(0,0,0,.22), 0 2px 7px rgba(0,0,0,.12) !important;
+    font-weight: 600 !important;
+}
+
+/* =========================================================
+   LOGOUT
+========================================================= */
+
+.sidebar-logout {
+    margin-top: auto !important;
+    flex-shrink: 0 !important;
+}
+
+/* =========================================================
+   SIDEBAR TOGGLE
+========================================================= */
+
+.sidebar.is-collapsed {
+    width: 72px !important;
+    min-width: 72px !important;
+
+    padding-left: 9px !important;
+    padding-right: 9px !important;
+}
+
+body.sidebar-collapsed .main-content {
+    margin-left: 72px !important;
+    width: calc(100% - 72px) !important;
+}
+
+.sidebar.is-collapsed .sidebar-logo h2,
+.sidebar.is-collapsed .sidebar-logo p,
+.sidebar.is-collapsed .menu-label,
+.sidebar.is-collapsed .group-chevron {
+    display: none !important;
+}
+
+.sidebar.is-collapsed .sidebar-logo {
+    padding-bottom: 20px !important;
+}
+
+.sidebar.is-collapsed .sidebar-logo .logo-icon {
+    justify-content: center !important;
+}
+
+.sidebar.is-collapsed .sidebar-main-link,
+.sidebar.is-collapsed .sidebar-group > summary {
+    justify-content: center !important;
+    gap: 0 !important;
+
+    padding-left: 9px !important;
+    padding-right: 9px !important;
+}
+
+.sidebar.is-collapsed .menu-icon {
+    margin: 0 !important;
+}
+
+.sidebar.is-collapsed .sidebar-submenu {
+    display: none !important;
+}
+
+.sidebar-toggle-ready {
+    cursor: pointer !important;
+    user-select: none !important;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+    .sidebar:not(.is-collapsed) {
+        width: 190px !important;
+        min-width: 190px !important;
+    }
+
+    .admin-wrapper .main-content,
+    .main-content {
+        margin-left: 190px !important;
+        width: calc(100% - 190px) !important;
+    }
+
+    body.sidebar-collapsed .main-content {
+        margin-left: 72px !important;
+        width: calc(100% - 72px) !important;
+    }
+}
+
+@media (max-width: 600px) {
+    .sidebar {
+        max-width: 230px !important;
+    }
+
+    .sidebar:not(.is-collapsed) {
+        width: 190px !important;
+        min-width: 190px !important;
+    }
+}

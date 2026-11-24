@@ -1,0 +1,67 @@
+/* ADMIN TOPBAR — shared layout for every admin page */
+.top-header {
+    width: 100% !important;
+    min-height: 70px !important;
+    height: 70px !important;
+    padding: 0 32px !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 16px !important;
+    background: #C99B78 !important;
+    border: 0 !important;
+    border-bottom: 1px solid #d9b17c !important;
+    position: relative !important;
+    z-index: 5 !important;
+}
+.top-header .hamburger {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 36px !important;
+    height: 36px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    color: #542D1C !important;
+    font-size: 21px !important;
+    line-height: 1 !important;
+    cursor: pointer !important;
+    flex: 0 0 36px !important;
+}
+.top-header .admin-profile,
+.top-header .profile {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    gap: 9px !important;
+    margin: 0 0 0 auto !important;
+    padding: 0 !important;
+    color: #542D1C !important;
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    line-height: 1 !important;
+    white-space: nowrap !important;
+}
+.top-header .avatar {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 34px !important;
+    height: 34px !important;
+    min-width: 34px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border-radius: 50% !important;
+    background: #EBD3C0 !important;
+    color: #542D1C !important;
+    font-size: 17px !important;
+    line-height: 1 !important;
+    box-sizing: border-box !important;
+}
+.top-header .admin-name { font-weight: 700 !important; }
+@media (max-width: 700px) {
+    .top-header { padding: 0 18px !important; }
+}
